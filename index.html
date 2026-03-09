@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patterson Self Storage | West Salem, Oregon — Development Opportunity</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap');
+
+  :root {
+    --navy: #1a2744;
+    --gold: #c9a54e;
+    --gold-light: #e8d59a;
+    --dark: #111827;
+    --gray-900: #1f2937;
+    --gray-700: #374151;
+    --gray-500: #6b7280;
+    --gray-300: #d1d5db;
+    --gray-100: #f3f4f6;
+    --white: #ffffff;
+    --green: #059669;
+    --green-light: #d1fae5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--dark);
+    background: var(--white);
+    line-height: 1.6;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    height: 85vh;
+    min-height: 600px;
+    background: linear-gradient(135deg, var(--navy) 0%, #0f172a 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('Patterson Exterior Rendering .png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.45;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(26,39,68,0.6) 0%, rgba(26,39,68,0.95) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    max-width: 800px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.35rem;
+    color: var(--gold-light);
+    font-weight: 300;
+    margin-bottom: 40px;
+    max-width: 600px;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    text-align: left;
+  }
+
+  .hero-stat-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .hero-stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 6px;
+  }
+
+  /* NAV BAR */
+  .nav-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-300);
+    padding: 0 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-brand {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--gray-700);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--navy);
+    color: var(--white) !important;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--gold) !important; color: var(--navy) !important; }
+
+  /* SECTIONS */
+  .section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.15;
+  }
+
+  .section-desc {
+    font-size: 1.1rem;
+    color: var(--gray-500);
+    max-width: 700px;
+    margin-bottom: 48px;
+  }
+
+  /* OVERVIEW GRID */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .overview-card {
+    background: var(--gray-100);
+    border-radius: 12px;
+    padding: 32px;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+  }
+
+  .overview-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 4px 20px rgba(201,165,78,0.15);
+  }
+
+  .overview-card-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--navy);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .overview-card-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--gold);
+  }
+
+  .overview-card h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .overview-card p {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    font-weight: 500;
+  }
+
+  /* HIGHLIGHT BANNER */
+  .highlight-banner {
+    background: linear-gradient(135deg, var(--navy) 0%, #0f172a 100%);
+    border-radius: 16px;
+    padding: 48px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+  }
+
+  .highlight-banner h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--white);
+    max-width: 500px;
+  }
+
+  .highlight-banner-tags {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .highlight-tag {
+    background: rgba(201,165,78,0.15);
+    color: var(--gold-light);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(201,165,78,0.3);
+  }
+
+  /* DETAILS TABLE */
+  .details-section {
+    background: var(--gray-100);
+    border-radius: 16px;
+    padding: 48px;
+    margin-bottom: 48px;
+  }
+
+  .details-section h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 24px;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--gray-300);
+  }
+
+  .detail-row:nth-child(odd) {
+    background: rgba(255,255,255,0.5);
+  }
+
+  .detail-label {
+    font-size: 0.9rem;
+    color: var(--gray-500);
+    font-weight: 500;
+  }
+
+  .detail-value {
+    font-size: 0.9rem;
+    color: var(--dark);
+    font-weight: 700;
+    text-align: right;
+  }
+
+  /* IMAGE GALLERY */
+  .gallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 300px 300px;
+    gap: 16px;
+    margin-bottom: 48px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .gallery-item {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .gallery-item:first-child {
+    grid-row: 1 / 3;
+  }
+
+  .gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.3) 100%);
+  }
+
+  .gallery-label {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    z-index: 2;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: rgba(0,0,0,0.5);
+    padding: 6px 14px;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* MARKET DATA */
+  .market-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .market-card {
+    text-align: center;
+    padding: 32px 16px;
+    background: var(--white);
+    border: 2px solid var(--gray-100);
+    border-radius: 12px;
+    transition: all 0.3s;
+  }
+
+  .market-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  .market-card-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .market-card-label {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+    font-weight: 500;
+  }
+
+  /* RATE TABLE */
+  .rate-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 48px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .rate-table thead {
+    background: var(--navy);
+  }
+
+  .rate-table th {
+    padding: 16px 20px;
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+  }
+
+  .rate-table td {
+    padding: 16px 20px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .rate-table tbody tr:hover {
+    background: rgba(201,165,78,0.05);
+  }
+
+  .rate-table .rate-highlight {
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  /* COMPETITORS TABLE */
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 48px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .comp-table thead {
+    background: var(--gray-100);
+  }
+
+  .comp-table th {
+    padding: 14px 20px;
+    color: var(--gray-700);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+  }
+
+  .comp-table td {
+    padding: 14px 20px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .occupancy-bar {
+    display: inline-block;
+    background: var(--green-light);
+    color: var(--green);
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+  }
+
+  /* TWO COL */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .two-col h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+
+  .two-col p {
+    color: var(--gray-700);
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .feature-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gray-100);
+    font-size: 0.95rem;
+    color: var(--gray-700);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .feature-list li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: linear-gradient(135deg, var(--navy) 0%, #0f172a 100%);
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .cta-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .cta-section p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 16px 36px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .btn-gold {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  .btn-gold:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201,165,78,0.3);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,0.3);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--dark);
+    padding: 48px 40px;
+    text-align: center;
+  }
+
+  .footer-brand {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .footer-sub {
+    color: var(--gray-500);
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .footer-disclaimer {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--gray-700);
+    color: var(--gray-500);
+    font-size: 0.75rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .hero h1 { font-size: 3rem; }
+    .overview-grid { grid-template-columns: repeat(2, 1fr); }
+    .market-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery { grid-template-columns: 1fr; grid-template-rows: 300px 250px 250px; }
+    .gallery-item:first-child { grid-row: auto; }
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .hero-stats { gap: 24px; }
+    .overview-grid { grid-template-columns: 1fr; }
+    .two-col { grid-template-columns: 1fr; gap: 32px; }
+    .details-grid { grid-template-columns: 1fr; }
+    .market-grid { grid-template-columns: 1fr 1fr; }
+    .section { padding: 48px 20px; }
+    .highlight-banner { padding: 32px 24px; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Investment Opportunity — West Salem, Oregon</div>
+    <h1>Patterson Self Storage</h1>
+    <p class="hero-subtitle">Adaptive reuse of a historic industrial building into a modern, two-story self-storage facility in Oregon's fastest-growing West Salem corridor.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-value">80,000</div>
+        <div class="hero-stat-label">Net Rentable SF (Two Floors)</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">100K</div>
+        <div class="hero-stat-label">SF Building</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">30–34'</div>
+        <div class="hero-stat-label">Clear Height</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">OZ</div>
+        <div class="hero-stat-label">Opportunity Zone</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <div class="nav-brand">Clutch Property Management</div>
+    <ul class="nav-links">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#building">Building</a></li>
+      <li><a href="#market">Market</a></li>
+      <li><a href="#competition">Competition</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- OVERVIEW -->
+<section class="section" id="overview">
+  <div class="section-label">Property Overview</div>
+  <div class="section-title">A Rare Conversion Opportunity in West Salem</div>
+  <p class="section-desc">The west end of the 300 Block Patterson complex features the tallest clear heights on the site (30–34 ft). This 100,000 SF section is being partitioned with a rated firewall and separate property line, creating 80,000 SF of net rentable two-story self-storage plus a large covered loading area — all with independent access and identity.</p>
+
+  <div class="overview-grid">
+    <div class="overview-card">
+      <div class="overview-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/><path d="M7 12h2v5H7zm4-3h2v8h-2zm4-3h2v11h-2z"/></svg>
+      </div>
+      <h3>80,000 SF</h3>
+      <p>Net rentable area across two floors within a 100,000 SF building with large covered loading area</p>
+    </div>
+    <div class="overview-card">
+      <div class="overview-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.94s4.18 1.36 4.18 3.85c0 1.89-1.44 2.98-3.12 3.19z"/></svg>
+      </div>
+      <h3>Opportunity Zone</h3>
+      <p>Qualified Opportunity Zone providing significant tax incentives for capital gains reinvestment</p>
+    </div>
+    <div class="overview-card">
+      <div class="overview-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+      </div>
+      <h3>Urban Renewal</h3>
+      <p>Up to $300,000 in West Salem redevelopment matching grants available for building improvements</p>
+    </div>
+    <div class="overview-card">
+      <div class="overview-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      </div>
+      <h3>900+ New Units</h3>
+      <p>Residential development pipeline within 3 miles fueling new self-storage demand through 2027</p>
+    </div>
+    <div class="overview-card">
+      <div class="overview-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+      </div>
+      <h3>Firewall Separation</h3>
+      <p>New rated firewall creates an independent property line, fully separating storage from adjacent uses</p>
+    </div>
+    <div class="overview-card">
+      <div class="overview-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM5 15h14v3H5z"/></svg>
+      </div>
+      <h3>Mixed-Use Zoning</h3>
+      <p>Current Craft Industrial with proposed MU-III zoning supports storage, commercial, and multiple uses</p>
+    </div>
+  </div>
+
+  <div class="highlight-banner">
+    <h3>Market ready: West Salem can absorb 60,000+ SF of new self-storage at 90–92% stabilized occupancy</h3>
+    <div class="highlight-banner-tags">
+      <span class="highlight-tag">6.5–7.2 SF/Capita</span>
+      <span class="highlight-tag">Below National Avg</span>
+      <span class="highlight-tag">89–94% Occupancy</span>
+    </div>
+  </div>
+</section>
+
+<!-- BUILDING DETAILS -->
+<section class="section" id="building" style="padding-top: 0;">
+  <div class="section-label">Building Details</div>
+  <div class="section-title">West End — Warehouse A/B</div>
+  <p class="section-desc">The largest and newest section of the complex — 100,000 SF of building with 80,000 SF of net rentable storage across two floors plus a large covered pull-in loading area. Steel frame and metal clad construction with 30–34 ft clear heights.</p>
+
+  <!-- Rendering Feature Image -->
+  <div style="margin-bottom: 32px; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.12);">
+    <img src="Patterson Exterior Rendering .png" alt="Patterson Self Storage — Exterior Rendering" style="width: 100%; display: block; height: auto;">
+  </div>
+
+  <!-- Gallery -->
+  <div class="gallery">
+    <div class="gallery-item" style="background-image: url('image (1).png');">
+      <span class="gallery-label">Architectural Elevations</span>
+    </div>
+    <div class="gallery-item" style="background-image: url('image (2).png');">
+      <span class="gallery-label">Floor Plan — Level 1</span>
+    </div>
+    <div class="gallery-item" style="background-image: url('image (3).png');">
+      <span class="gallery-label">Floor Plan — Level 2</span>
+    </div>
+  </div>
+
+  <div class="details-section">
+    <h3>Property Specifications</h3>
+    <div class="details-grid">
+      <div>
+        <div class="detail-row">
+          <span class="detail-label">Address</span>
+          <span class="detail-value">300 Block Patterson St NW, Salem, OR 97304</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Section Being Converted</span>
+          <span class="detail-value">West End (Warehouse A/B)</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Total Building Area</span>
+          <span class="detail-value">~100,000 SF</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Net Rentable (2 Floors)</span>
+          <span class="detail-value">80,000 SF</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Covered Loading Area</span>
+          <span class="detail-value">Large Pull-In Bay</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Clear Height</span>
+          <span class="detail-value">30' – 34'</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Year Built</span>
+          <span class="detail-value">1986</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Construction</span>
+          <span class="detail-value">Steel Frame / Metal Clad</span>
+        </div>
+      </div>
+      <div>
+        <div class="detail-row">
+          <span class="detail-label">Roof Structure</span>
+          <span class="detail-value">Steel</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Floors</span>
+          <span class="detail-value">Concrete Slab</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Electrical</span>
+          <span class="detail-value">Heavy Power</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Grade Doors</span>
+          <span class="detail-value">3</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Zoning</span>
+          <span class="detail-value">Craft Industrial / Proposed MU-III</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Opportunity Zone</span>
+          <span class="detail-value">Yes</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Total Site Area</span>
+          <span class="detail-value">6.54 Acres (full campus)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3>Conversion Highlights</h3>
+      <p>The West End section is being separated from the rest of the 185,000 SF complex with a new rated firewall, creating an independent property line and dedicated access. The 100,000 SF building yields 80,000 SF of net rentable storage across two floors, plus a large covered pull-in loading area for tenant convenience. The 30–34 ft clear heights allow for a full second story while maintaining comfortable corridor heights on both levels.</p>
+      <ul class="feature-list">
+        <li>Rated firewall creating independent property boundary</li>
+        <li>Separate street access from Patterson St NW and 2nd St NW</li>
+        <li>Full second-floor mezzanine within existing envelope</li>
+        <li>Large covered pull-in loading area for tenant move-ins</li>
+        <li>Heavy power electrical service already in place</li>
+        <li>Concrete slab foundation supports structural loads</li>
+        <li>Steel frame construction ideal for interior partitioning</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Planned Amenities</h3>
+      <p>The converted facility will feature modern amenities competitive with newer purpose-built facilities, leveraging the existing industrial structure for a distinctive customer experience.</p>
+      <ul class="feature-list">
+        <li>Climate-controlled and standard unit options</li>
+        <li>Drive-up accessible units on ground level</li>
+        <li>Electronic gate access with mobile app management</li>
+        <li>LED lighting throughout for safety and efficiency</li>
+        <li>Wide driveways for moving trucks and trailers</li>
+        <li>On-site management office and retail area</li>
+        <li>24/7 security camera surveillance</li>
+        <li>Elevator access to second floor units</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET DATA -->
+<section class="section" id="market" style="background: var(--gray-100); max-width: 100%; padding: 80px 40px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="section-label">Market Analysis</div>
+    <div class="section-title">Strong Fundamentals in an Underserved Market</div>
+    <p class="section-desc">Salem's 181,000+ residents and 430,000+ metro population drive robust storage demand. The facility's West Salem location — just one mile across the Willamette River from downtown — draws from the entire city while self-storage supply remains below the national average of 7.3 SF per capita.</p>
+
+    <div class="market-grid">
+      <div class="market-card">
+        <div class="market-card-value">181,297</div>
+        <div class="market-card-label">Salem City Population</div>
+      </div>
+      <div class="market-card">
+        <div class="market-card-value">430,000+</div>
+        <div class="market-card-label">Salem MSA Population</div>
+      </div>
+      <div class="market-card">
+        <div class="market-card-value">$89,936</div>
+        <div class="market-card-label">West Salem Median HH Income</div>
+      </div>
+      <div class="market-card">
+        <div class="market-card-value">90–92%</div>
+        <div class="market-card-label">Market Average Occupancy</div>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top: 48px;">Current Market Rental Rates</div>
+    <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 24px;">Salem-Area Self-Storage Rates (2025–2026)</h3>
+    <table class="rate-table">
+      <thead>
+        <tr>
+          <th>Unit Size</th>
+          <th>Square Feet</th>
+          <th>Low $/Mo</th>
+          <th>Average $/Mo</th>
+          <th>High $/Mo</th>
+          <th>Annual $/SF</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>5 × 5</strong></td>
+          <td>25 SF</td>
+          <td>$51</td>
+          <td>$66</td>
+          <td>$86</td>
+          <td class="rate-highlight">$31.68/SF</td>
+        </tr>
+        <tr>
+          <td><strong>5 × 10</strong></td>
+          <td>50 SF</td>
+          <td>$65</td>
+          <td>$96</td>
+          <td>$111</td>
+          <td class="rate-highlight">$23.04/SF</td>
+        </tr>
+        <tr>
+          <td><strong>10 × 10</strong></td>
+          <td>100 SF</td>
+          <td>$111</td>
+          <td>$159</td>
+          <td>$230</td>
+          <td class="rate-highlight">$19.08/SF</td>
+        </tr>
+        <tr>
+          <td><strong>10 × 15</strong></td>
+          <td>150 SF</td>
+          <td>$140</td>
+          <td>$212</td>
+          <td>$281</td>
+          <td class="rate-highlight">$16.96/SF</td>
+        </tr>
+        <tr>
+          <td><strong>10 × 20</strong></td>
+          <td>200 SF</td>
+          <td>$215</td>
+          <td>$251</td>
+          <td>$320</td>
+          <td class="rate-highlight">$15.06/SF</td>
+        </tr>
+        <tr>
+          <td><strong>10 × 30</strong></td>
+          <td>300 SF</td>
+          <td>$317</td>
+          <td>$323</td>
+          <td>$393</td>
+          <td class="rate-highlight">$12.92/SF</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-banner" style="margin-bottom: 0;">
+      <h3>Projected blended rate of $17.50–$18.00/SF annually at stabilization — a 4–8% premium supported by new-construction quality</h3>
+      <div class="highlight-banner-tags">
+        <span class="highlight-tag">Break-Even at 60–65%</span>
+        <span class="highlight-tag">Stabilized Year 3+</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITION -->
+<section class="section" id="competition">
+  <div class="section-label">Competitive Landscape</div>
+  <div class="section-title">Limited Competition in West Salem</div>
+  <p class="section-desc">The primary trade area has only one major competitor — Public Storage on Glen Creek Road — operating at 94% occupancy. Most Salem facilities are located 3+ miles east across the Willamette River.</p>
+
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>Facility</th>
+        <th>Location</th>
+        <th>Est. Size</th>
+        <th>Distance</th>
+        <th>Occupancy</th>
+        <th>In-Place Rent</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Public Storage — Glen Creek</strong></td>
+        <td>350 Glen Creek Rd NW</td>
+        <td>93,252 SF</td>
+        <td>1.2 mi</td>
+        <td><span class="occupancy-bar">94%</span></td>
+        <td>$16.75/SF</td>
+      </tr>
+      <tr>
+        <td><strong>Public Storage — Blossom Dr</strong></td>
+        <td>3715 Blossom Dr NE</td>
+        <td>71,500 SF</td>
+        <td>3.8 mi</td>
+        <td><span class="occupancy-bar">89%</span></td>
+        <td>$16.66/SF</td>
+      </tr>
+      <tr>
+        <td><strong>Kashmir Storage</strong></td>
+        <td>3631 Kashmir Way SE</td>
+        <td>50,000–70,000 SF</td>
+        <td>4.2 mi</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>Northwest Self Storage</strong></td>
+        <td>1575 Hickory St NE</td>
+        <td>40,000–60,000 SF</td>
+        <td>3.5 mi</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>Storage Solutions Salem</strong></td>
+        <td>2547 Salem Dallas Hwy</td>
+        <td>30,000–40,000 SF</td>
+        <td>2.8 mi</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="two-col">
+    <div>
+      <h3>Competitive Advantage</h3>
+      <p>Patterson Self Storage will be the only modern, purpose-converted facility in the central West Salem trade area. The nearest competitor, Public Storage on Glen Creek, is an older facility approximately 1 mile north with limited drive-up access. Its 94% occupancy signals strong unmet demand in the submarket.</p>
+      <p>Most other Salem storage options are located 3+ miles east across the Willamette River. Patterson serves as the convenient choice for West Salem's 23,559 immediate residents while also drawing from Salem's broader 181,000+ population — all within a short bridge crossing.</p>
+    </div>
+    <div>
+      <h3>Demand Drivers</h3>
+      <ul class="feature-list">
+        <li>900+ new residential units in the pipeline (2024–2027)</li>
+        <li>Titan Hills Apartments: 400+ units under construction</li>
+        <li>15–20% of multifamily residents rent storage</li>
+        <li>Growing commercial/contractor storage demand</li>
+        <li>Above-average incomes correlate with higher storage use</li>
+        <li>Oregon lifestyle drives seasonal/recreational storage</li>
+        <li>West Salem Urban Renewal spurring new investment</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="section" id="location" style="background: var(--gray-100); max-width: 100%; padding: 80px 40px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="section-label">Location</div>
+    <div class="section-title">West Salem's Commercial Heart</div>
+    <p class="section-desc">Positioned on Patterson Street NW at the Edgewater corridor, the site offers direct access to Highway 22 and sits less than one mile from downtown Salem across the Willamette River.</p>
+
+    <div class="two-col">
+      <div>
+        <h3>Access &amp; Connectivity</h3>
+        <ul class="feature-list">
+          <li>Extensive frontage on Patterson St NW and Murlark Ave NW</li>
+          <li>Half-mile to Highway 22 via Edgewater St NW</li>
+          <li>Highway 22 connects to Oregon Coast and Central Oregon</li>
+          <li>3.5 miles to Interstate 5 (Market St, Salem Parkway)</li>
+          <li>1 mile to downtown Salem via Willamette River bridges</li>
+          <li>2nd Street improvement underway adjacent to property</li>
+        </ul>
+        <h3 style="margin-top: 32px;">Nearby Retail &amp; Services</h3>
+        <ul class="feature-list">
+          <li>Roth's Fresh Markets &amp; Ace Hardware on Glen Creek Rd</li>
+          <li>Walgreens, McDonald's, Taco Bell on Edgewater corridor</li>
+          <li>Dutch Bros Coffee, Carl's Jr, Shell station</li>
+          <li>OnPoint Credit Union, USPS, Verizon</li>
+          <li>Goodwill and Plaid Pantry nearby</li>
+          <li>Walker Middle School within walking distance</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Salem Trade Area at a Glance</h3>
+        <div class="details-section" style="margin-bottom: 0;">
+          <div class="detail-row">
+            <span class="detail-label">Salem City Population</span>
+            <span class="detail-value">181,297</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Salem MSA Population</span>
+            <span class="detail-value">430,000+</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">West Salem (Primary Area)</span>
+            <span class="detail-value">23,559 / 8,789 HH</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Median HH Income</span>
+            <span class="detail-value">$89,936</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">vs. National Median</span>
+            <span class="detail-value" style="color: var(--green);">+12.9%</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Predominant Age</span>
+            <span class="detail-value">25–64 years</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Owner-Occupied Rate</span>
+            <span class="detail-value">60–65%</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Salem MSA Population</span>
+            <span class="detail-value">430,000+</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Salem Businesses</span>
+            <span class="detail-value">8,250+</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Workers in 45-mi Radius</span>
+            <span class="detail-value">1,000,000+</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCENTIVES -->
+<section class="section">
+  <div class="section-label">Investment Incentives</div>
+  <div class="section-title">Tax Benefits &amp; Grant Opportunities</div>
+  <p class="section-desc">This property sits within both a Federal Opportunity Zone and the West Salem Urban Renewal Area, providing a layered incentive structure for development investment.</p>
+
+  <div class="overview-grid" style="grid-template-columns: 1fr 1fr;">
+    <div class="overview-card">
+      <div class="overview-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.94s4.18 1.36 4.18 3.85c0 1.89-1.44 2.98-3.12 3.19z"/></svg>
+      </div>
+      <h3>Opportunity Zone</h3>
+      <p>Defer and reduce capital gains taxes on investments held 5+ years. Investments held 10+ years pay zero capital gains on OZ appreciation. Ideal for 1031 exchange alternatives and long-term holds.</p>
+    </div>
+    <div class="overview-card">
+      <div class="overview-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+      </div>
+      <h3>West Salem Redevelopment Grant</h3>
+      <p>Up to $300,000 in matching grants (20% match requirement) for eligible building improvements. Investment must remain in the district at least 10 years. Applicable to interior and exterior permanent construction.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="section-label" style="color: var(--gold);">Get In Touch</div>
+    <h2>Ready to Learn More?</h2>
+    <p>Contact our team for the full offering memorandum, proforma projections, and to schedule a site tour of the Patterson Self Storage development.</p>
+    <div class="cta-buttons">
+      <a href="https://www.clutchpropertymanagement.com" class="btn btn-gold" target="_blank">ClutchPropertyManagement.com</a>
+      <a href="https://www.clutchindustries.com" class="btn btn-outline" target="_blank">ClutchIndustries.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">Clutch Property Management</div>
+  <div class="footer-sub">Salem &bull; Eugene &bull; Sisters &mdash; 26 Properties &bull; 1M+ Rentable SF</div>
+  <div class="footer-links">
+    <a href="https://www.clutchpropertymanagement.com" target="_blank">clutchpropertymanagement.com</a>
+    <a href="https://www.clutchindustries.com" target="_blank">clutchindustries.com</a>
+    <a href="https://www.nwrusa.com" target="_blank">nwrusa.com</a>
+    <a href="https://www.aplaceforvets.com" target="_blank">aplaceforvets.com</a>
+  </div>
+  <div class="footer-disclaimer">
+    This information is provided for general informational purposes only. While we strive for accuracy, prospective buyers or investors should conduct independent investigation and verification of all matters deemed material, including but not limited to financial projections, zoning, and property conditions. This listing does not constitute an offer to sell or solicitation of an offer to buy. Consult your attorney, accountant, or other professional advisor before making investment decisions.
+  </div>
+</footer>
+
+</body>
+</html>
